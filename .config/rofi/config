@@ -1,0 +1,5 @@
+rofi.show: run
+rofi.modi: window,ssh,run
+rofi.blur-background = true
+rofi.theme: ~/.config/rofi/rofitheme
+rofi.fullscreen:true

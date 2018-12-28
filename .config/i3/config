@@ -1,0 +1,217 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# general
+font pango:Roboto 9
+gaps inner 10
+smart_gaps off
+smart_borders on
+new_window pixel 2
+new_float pixel 2
+hide_edge_borders none
+
+#
+set $mod Mod4
+
+set $term urxvt
+set $web_browser chromium
+set $text_editor_gui subl
+set $text_editor_terminal vim
+set $file_browser_terminal ranger
+set $file_browser_gui thunar
+set $system_monitor htop
+set $calculator qalc
+set $music_player_gui spotify-wrapper.sh
+set $music_player_terminal ncmpcpp
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+## --- program shortcuts --- ##
+
+bindsym $mod+Return exec $term
+bindsym $mod+c exec $web_browser
+bindsym $mod+e exec $text_editor_gui
+bindsym $mod+Shift+e exec $term -e $text_editor_terminal
+bindsym $mod+t exec $term -e $file_browser_terminal
+bindsym $mod+Shift+t exec $file_browser_gui
+bindsym $mod+Delete exec $term -e $system_monitor
+bindsym $mod+o exec $term -e $calculator
+bindsym $mod+m exec $term -e $music_player_terminal
+bindsym $mod+Shift+m exec $music_player_gui
+
+# screenshot
+
+bindsym --release Shift+Print exec scrot -s "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
+bindsym --release Ctrl+Shift+Print exec scrot -s "screenshot_%Y%m%d_%H%M%S.png"
+
+bindsym --release Print exec scrot "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
+bindsym --release Ctrl+Print exec scrot "screenshot_%Y%m%d_%H%M%S.png"
+
+# startup
+exec --no-startup-id numlockx on
+exec --no-startup-id nm-applet
+exec --no-startup-id dropbox start
+exec --no-startup-id redshift-gtk
+exec --no-startup-id compton -b
+
+exec_always --no-startup-id wal -R
+exec_always --no-startup-id feh --bg-scale ~/.config/wallpaper.png
+#exec_always --no-startup-id -no-startup-id sh ~/.config/polybar/launch.sh
+
+exec_always  --no-startup-id xset +fp /home/matej/.fonts
+exec_always  --no-startup-id xset fp rehash
+
+# internat
+#exec_always --no-startup-id xrandr --output DP-1 --mode 1680x1050 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
+
+# doma
+exec_always --no-startup-id xrandr --output DP-1 --mode 1600x900 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
+
+# power controls
+bindsym $mod+Shift+Ctrl+x exec --no-startup-id poweroff
+bindsym $mod+Shift+Ctrl+r exec --no-startup-id reboot
+
+
+## --- i3 shortcuts --- ##
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# run
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
+
+# focus arrows
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move arrows
+bindsym $mod+Shift+Left move left 20 px
+bindsym $mod+Shift+Down move down 20 px
+bindsym $mod+Shift+Up move up 20 px
+bindsym $mod+Shift+Right move right 20 px
+
+# resize arrows
+bindsym $mod+Ctrl+Up resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+Right resize grow width 5 px or 5 ppt
+bindsym $mod+Ctrl+Down resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+Left resize shrink width 5 px or 5 ppt
+
+# focus vim
+bindsym $mod+H focus left
+bindsym $mod+J focus down
+bindsym $mod+K focus up
+bindsym $mod+L focus right
+
+# move vim
+bindsym $mod+Shift+H move left 20 px
+bindsym $mod+Shift+J move down 20 px
+bindsym $mod+Shift+K move up 20 px
+bindsym $mod+Shift+L move right 20 px
+
+# resize vim
+bindsym $mod+Ctrl+H resize shrink width 5 px or 5 ppt
+bindsym $mod+Ctrl+J resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+K resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+L resize grow width 5 px or 5 ppt
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+plus workspace 1
+bindsym $mod+lcaron workspace 2
+bindsym $mod+scaron workspace 3
+bindsym $mod+ccaron workspace 4
+bindsym $mod+tcaron workspace 5
+bindsym $mod+zcaron workspace 6
+bindsym $mod+yacute workspace 7
+bindsym $mod+aacute workspace 8
+bindsym $mod+iacute workspace 9
+bindsym $mod+eacute workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+plus move container to workspace 1
+bindsym $mod+Shift+lcaron move container to workspace 2
+bindsym $mod+Shift+scaron move container to workspace 3
+bindsym $mod+Shift+ccaron move container to workspace 4
+bindsym $mod+Shift+tcaron move container to workspace 5
+bindsym $mod+Shift+zcaron move container to workspace 6
+bindsym $mod+Shift+yacute move container to workspace 7
+bindsym $mod+Shift+aacute move container to workspace 8
+bindsym $mod+Shift+iacute move container to workspace 9
+bindsym $mod+Shift+eacute move container to workspace 10
+
+
+# restart i3
+bindsym $mod+Shift+r restart
+
+# colors
+#set_from_resource 	$background_i3wmthemer  background
+#set_from_resource	$foreground_i3wmthemer	foreground
+#set_from_resource	$color00_i3wmthemer		color0
+#set_from_resource 	$color01_i3wmthemer     color1
+#set_from_resource 	$color02_i3wmthemer 	color2
+#set_from_resource 	$color03_i3wmthemer 	color3
+#set_from_resource 	$color04_i3wmthemer 	color4
+#set_from_resource 	$color05_i3wmthemer 	color5
+#set_from_resource 	$color06_i3wmthemer		color6
+#set_from_resource	$color07_i3wmthemer		color7
+#set_from_resource	$color08_i3wmthemer		color8
+#set_from_resource	$color09_i3wmthemer		color9
+#set_from_resource	$color10_i3wmthemer		color10
+#set_from_resource	$color11_i3wmthemer		color11
+#set_from_resource	$color12_i3wmthemer		color12
+#set_from_resource	$color13_i3wmthemer		color13
+#set_from_resource	$color14_i3wmthemer		color14
+#set_from_resource	$color15_i3wmthemer		color15
+#
+#client.background       $background_i3wmthemer
+#
+#client.focused          #FFCF76 $background_i3wmthemer  #FFCF76 #FFCF76         #FFCF76
+#client.unfocused        #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
+#client.focused_inactive #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
+#client.urgent           #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
+#client.placeholder      #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
+
+# dont focus with mouse
+focus_follows_mouse no
+
+# audio with media keys
+bindsym XF86AudioRaiseVolume exec --no-startp-id amixer -qD pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -qD pulse sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -qD pulse set Master toggle
+
+# audio with numpad
+bindsym $mod+KP_Multiply exec --no-startup-id amixer -qD pulse sset Master unmute 2.5%+
+bindsym $mod+KP_Divide exec --no-startup-id amixer -qD pulse sset Master unmute 2.5%-
+bindsym $mod+KP_Subtract exec --no-startup-id amixer -qD pulse set Master toggle
+
+# screen brightness
+# bindsym XF86MonBrightnessUp
+
+bar {
+    i3bar_command ~/.config/polybar/launch.sh
+}
