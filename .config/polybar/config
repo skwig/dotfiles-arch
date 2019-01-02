@@ -236,7 +236,7 @@ label-disconnected-foreground = #66ffffff
 type = internal/date
 interval = 5
  
-date = "%A, %m %b %Y • %R"
+date = "%A, %d %b %Y • %R"
  
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}

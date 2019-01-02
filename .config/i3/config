@@ -58,7 +58,7 @@ exec --no-startup-id compton -b
 
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id feh --bg-scale ~/.config/wallpaper.png
-#exec_always --no-startup-id -no-startup-id sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id --no-startup-id sh ~/.config/polybar/launch.sh
 
 exec_always  --no-startup-id xset +fp /home/matej/.fonts
 exec_always  --no-startup-id xset fp rehash
@@ -211,7 +211,3 @@ bindsym $mod+KP_Subtract exec --no-startup-id amixer -qD pulse set Master toggle
 
 # screen brightness
 # bindsym XF86MonBrightnessUp
-
-bar {
-    i3bar_command ~/.config/polybar/launch.sh
-}

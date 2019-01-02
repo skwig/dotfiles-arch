@@ -3,7 +3,7 @@
 ! =================
 
 ! 
-!URxvt.font: 7x14
+URxvt.font: xft:Hack-Regular:pixelsize=14
 URxvt.boldFont:
 URxvt.letterSpace: 0
 URxvt.scrollBar: false
@@ -13,7 +13,7 @@ URxvt.internalBorder: 10
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 
-! disable useless ctrl+shift ISO14755 mode
+! disable ctrl+shift ISO14755 mode
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
