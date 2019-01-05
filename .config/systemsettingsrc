@@ -1,0 +1,21 @@
+[FileDialogSize]
+Height 900=480
+Width 1600=640
+
+[KFileDialog Settings]
+Recent Files[$e]=1544990853297.jpg,file:$HOME/Pictures/Wallpapers/EuQ5ZRaBmVG_.jpg,file:$HOME/Pictures/Wallpapers/1544990853297.jpg,file:$HOME/Pictures/Wallpapers/dzl0NOg.jpg
+Recent URLs[$e]=file:$HOME/Pictures/Wallpapers/
+
+[MainWindow]
+Height 1080=1030
+Height 768=712
+Height 900=876
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAw0AAANsAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1366=1346
+Width 1600=781
+Width 1920=1900
+
+[PlasmaRunnerManager]
+LaunchCounts=

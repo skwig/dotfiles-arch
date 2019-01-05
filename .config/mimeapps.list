@@ -1,0 +1,16 @@
+[Added Associations]
+application/zip=org.gnome.Nautilus.desktop;
+image/png=org.kde.gwenview.desktop;feh.desktop;
+inode/directory=org.gnome.Nautilus.desktop;Thunar-folder-handler.desktop;ranger.desktop;
+text/html=chromium.desktop;
+text/plain=chromium.desktop;vim.desktop;
+video/mp4=mpv.desktop;
+application/x-compressed-tar=org.kde.ark.desktop;
+
+[Default Applications]
+inode/directory=org.gnome.Nautilus.desktop;
+text/html=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop

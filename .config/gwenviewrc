@@ -1,0 +1,17 @@
+[$Version]
+update_info=gwenview.upd:SideBar_StatusBar_Rename,gwenview.upd:ImageView_AlphaBackgroundMode_Update
+
+[MainWindow]
+Height 1080=1026
+State=AAAA/wAAAAD9AAAAAAAAAnIAAAO+AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=626
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/5BC6634F-8FED-4B4B-B166-C2355C98E461.jpg
+File2[$e]=$HOME/foo.png
+Name1[$e]=5BC6634F-8FED-4B4B-B166-C2355C98E461.jpg
+Name2[$e]=foo.png
+
+[SideBar]
+SideBarSplitterSizes=242,381

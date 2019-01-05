@@ -1,0 +1,18 @@
+[ExtractDialog]
+DirHistory[$e]=$HOME/Downloads/
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME,file:$HOME
+Recent URLs[$e]=file:$HOME/Downloads/
+
+[MainWindow]
+Height 1080=1032
+State=AAAA/wAAAAD9AAAAAAAAAm0AAAPNAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+Width 1920=621
+splitterSizes=412,205
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/breeze-514-0.2.3.tar.gz
+Name1[$e]=breeze-514-0.2.3.tar.gz

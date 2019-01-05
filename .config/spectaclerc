@@ -1,0 +1,16 @@
+[FileDialogSize]
+Height 900=480
+Width 1600=640
+
+[General]
+lastSaveAsFile=file:///home/matej/foo.png
+lastSaveFile=file:///home/matej/foo.png
+
+[GuiConfig]
+captureModeIndex=4
+includePointer=false
+lastUsedSaveMode=0
+window-position=2207,238
+
+[KFileDialog Settings]
+Recent Files[$e]=file:$HOME/foo.png,file:$HOME/foo.png

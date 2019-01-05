@@ -1,0 +1,21 @@
+[General]
+Recent Urls[$e]=file:$HOME/Documents/temp_webm/1cb256b09f2d2589501dc507e9d21c7fe20d63b5d77473538ca40d96a1878fdf.webm
+TimeFormat=1
+Volume=1
+
+[MainWindow]
+Height 1080=1026
+State=AAAA/wAAAAD9AAAAAAAAAm0AAAOjAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=621
+
+[file:///home/matej/Documents/temp_webm/1cb256b09f2d2589501dc507e9d21c7fe20d63b5d77473538ca40d96a1878fdf.webm]
+Brightness=0
+Contrast=0
+Date=2019,1,2
+Hue=0
+IsVideo=true
+Position=7756
+Preferred Size=621,931
+Saturation=0
+Subtitle=0

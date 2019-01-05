@@ -2,17 +2,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-workspace 1 output HDMI-1
-workspace 2 output DP-1
-#workspace 3 output eDP-1
-#workspace 4 output DP-2
-#workspace 5 output DP-2
-#workspace 6 output DP-2
-
 # general
 font pango:Roboto 9
 gaps inner 10
-#smart_gaps on
+smart_gaps off
 smart_borders on
 new_window pixel 2
 new_float pixel 2
@@ -31,7 +24,6 @@ set $system_monitor htop
 set $calculator qalc
 set $music_player_gui spotify-wrapper.sh
 set $music_player_terminal ncmpcpp
-set $system_settings mate-control-center
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -48,28 +40,25 @@ bindsym $mod+Delete exec $term -e $system_monitor
 bindsym $mod+o exec $term -e $calculator
 bindsym $mod+m exec $term -e $music_player_terminal
 bindsym $mod+Shift+m exec $music_player_gui
-bindsym $mod+s exec $system_settings
 
 # screenshot
 
-#bindsym --release Shift+Print exec scrot -s "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
-#bindsym --release Ctrl+Shift+Print exec scrot -s "screenshot_%Y%m%d_%H%M%S.png"
+bindsym --release Shift+Print exec scrot -s "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
+bindsym --release Ctrl+Shift+Print exec scrot -s "screenshot_%Y%m%d_%H%M%S.png"
 
-#bindsym --release Print exec scrot "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
-#bindsym --release Ctrl+Print exec scrot "screenshot_%Y%m%d_%H%M%S.png"
-
-bindsym Shift+Print exec gnome-screenshot -ac
+bindsym --release Print exec scrot "/tmp/.scrot_tmp.png" -e 'xclip -i "/tmp/.scrot_tmp.png" -selection clipboard -t image/png'
+bindsym --release Ctrl+Print exec scrot "screenshot_%Y%m%d_%H%M%S.png"
 
 # startup
 exec --no-startup-id numlockx on
-#exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 exec --no-startup-id redshift-gtk
 exec --no-startup-id compton -b
 
 exec_always --no-startup-id wal -R
-#exec_always --no-startup-id feh --bg-scale ~/.config/wallpaper.png
-#exec_always --no-startup-id --no-startup-id sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-scale ~/.config/wallpaper.png
+exec_always --no-startup-id --no-startup-id sh ~/.config/polybar/launch.sh
 
 exec_always  --no-startup-id xset +fp /home/matej/.fonts
 exec_always  --no-startup-id xset fp rehash
@@ -78,12 +67,11 @@ exec_always  --no-startup-id xset fp rehash
 #exec_always --no-startup-id xrandr --output DP-1 --mode 1680x1050 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
 
 # doma
-#exec_always --no-startup-id xrandr --output DP-1 --mode 1600x900 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
+exec_always --no-startup-id xrandr --output DP-1 --mode 1600x900 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
 
 # power controls
 bindsym $mod+Shift+Ctrl+x exec --no-startup-id poweroff
 bindsym $mod+Shift+Ctrl+r exec --no-startup-id reboot
-bindsym $mod+Shift+Ctrl+l exec --no-startup-id loginctl lock-session
 
 
 ## --- i3 shortcuts --- ##
@@ -226,7 +214,7 @@ bindsym $mod+KP_Subtract exec --no-startup-id amixer -qD pulse set Master toggle
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
-exec --no-startup-id killall mate-panel
+exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill, floating enable, border none
 
 ## Avoid tiling popups, dropdown windows from plasma
@@ -239,4 +227,3 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
-for_window[window_type="notification"] floating enable
