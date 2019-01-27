@@ -12,8 +12,9 @@ sudo pacman -S neofetch xorg-server xorg-xinit gdm ranger chromium i3-gaps compt
 yay -S oomox-git android-studio polybar paper-icon-theme android-udev-kit
 
 # install vim plugins
+mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 yay -S vim-airline vim-nerdtree vim-nerdtree-git
 
 sudo pip install pywal
-sudo systemctl start gdm.service
-sudo systemctl enable gdm.service
+sudo systemctl enable sddm.service
