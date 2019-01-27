@@ -31,7 +31,7 @@ set $system_monitor htop
 set $calculator qalc
 set $music_player_gui spotify-wrapper.sh
 set $music_player_terminal ncmpcpp
-set $system_settings mate-control-center
+set $system_settings systemsettings5
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -75,7 +75,7 @@ exec_always  --no-startup-id xset +fp /home/matej/.fonts
 exec_always  --no-startup-id xset fp rehash
 
 # internat
-#exec_always --no-startup-id xrandr --output DP-1 --mode 1680x1050 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
+exec_always --no-startup-id xrandr --output DP-1 --mode 1680x1050 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
 
 # doma
 #exec_always --no-startup-id xrandr --output DP-1 --mode 1600x900 --pos 1920x0 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --off --output HDMI-2 --off
@@ -176,37 +176,8 @@ bindsym $mod+Shift+aacute move container to workspace 8
 bindsym $mod+Shift+iacute move container to workspace 9
 bindsym $mod+Shift+eacute move container to workspace 10
 
-
 # restart i3
 bindsym $mod+Shift+r restart
-
-# colors
-#set_from_resource 	$background_i3wmthemer  background
-#set_from_resource	$foreground_i3wmthemer	foreground
-#set_from_resource	$color00_i3wmthemer		color0
-#set_from_resource 	$color01_i3wmthemer     color1
-#set_from_resource 	$color02_i3wmthemer 	color2
-#set_from_resource 	$color03_i3wmthemer 	color3
-#set_from_resource 	$color04_i3wmthemer 	color4
-#set_from_resource 	$color05_i3wmthemer 	color5
-#set_from_resource 	$color06_i3wmthemer		color6
-#set_from_resource	$color07_i3wmthemer		color7
-#set_from_resource	$color08_i3wmthemer		color8
-#set_from_resource	$color09_i3wmthemer		color9
-#set_from_resource	$color10_i3wmthemer		color10
-#set_from_resource	$color11_i3wmthemer		color11
-#set_from_resource	$color12_i3wmthemer		color12
-#set_from_resource	$color13_i3wmthemer		color13
-#set_from_resource	$color14_i3wmthemer		color14
-#set_from_resource	$color15_i3wmthemer		color15
-#
-#client.background       $background_i3wmthemer
-#
-#client.focused          #FFCF76 $background_i3wmthemer  #FFCF76 #FFCF76         #FFCF76
-#client.unfocused        #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
-#client.focused_inactive #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
-#client.urgent           #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
-#client.placeholder      #FFCF76 $background_i3wmthemer  #FFCF76 $color00_i3wmthemer             $color00_i3wmthemer
 
 # dont focus with mouse
 focus_follows_mouse no
@@ -239,4 +210,4 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
-for_window[window_type="notification"] floating enable
+for_window [window_type="notification"] floating enable

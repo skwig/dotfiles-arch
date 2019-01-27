@@ -1,6 +1,7 @@
 # root configs
 cp -f ~/.Xresources .
 cp -f  ~/.vimrc . 
+cp -f  ~/.bashrc . 
 
 # config
 mkdir -p .config

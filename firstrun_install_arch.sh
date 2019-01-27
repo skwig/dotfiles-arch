@@ -11,6 +11,9 @@ sudo pacman -S neofetch xorg-server xorg-xinit gdm ranger chromium i3-gaps compt
 # install aur packages
 yay -S oomox-git android-studio polybar paper-icon-theme android-udev-kit
 
+# install vim plugins
+yay -S vim-airline vim-nerdtree vim-nerdtree-git
+
 sudo pip install pywal
 sudo systemctl start gdm.service
 sudo systemctl enable gdm.service
