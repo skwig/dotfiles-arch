@@ -2,6 +2,7 @@
 cp -f ~/.Xresources .
 cp -f  ~/.vimrc . 
 cp -f  ~/.bashrc . 
+cp -f  ~/.bash_aliases . 
 
 # config
 mkdir -p .config
